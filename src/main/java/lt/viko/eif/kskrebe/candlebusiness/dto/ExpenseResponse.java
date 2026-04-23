@@ -25,10 +25,10 @@ public class ExpenseResponse {
     /** Islaidos data. */
     private LocalDate expenseDate;
 
-    /** Finansininko identifikatorius. */
+    /** Buhalterio identifikatorius. */
     private Long financierId;
 
-    /** Finansininko naudotojo vardas. */
+    /** Buhalterio naudotojo vardas. */
     private String financierUsername;
 
     public ExpenseResponse() {

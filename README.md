@@ -8,7 +8,7 @@ Sistema skirta valdyti:
 - tiekėjus, jų adresus ir sutartis;
 - klientų užsakymus;
 - darbuotojo gamybos veiksmus;
-- finansininko išlaidas;
+- buhalterio išlaidas;
 - vadovo suvestinę.
 
 ## Technologijos
@@ -25,7 +25,7 @@ Sistema skirta valdyti:
 Rolių pasirinkimas atliekamas per pradinį puslapį ir atskiras zonas:
 - `vadovas`
 - `darbuotojas`
-- `finansininkas`
+- `buhalteris`
 - `klientas`
 
 Tai palikta sąmoningai, nes projektas tik mokymosi tikslams.
@@ -34,7 +34,7 @@ Tai palikta sąmoningai, nes projektas tik mokymosi tikslams.
 - `http://localhost:8080/` - pradinis puslapis
 - `http://localhost:8080/vadovas` - vadovo zona
 - `http://localhost:8080/darbuotojas` - darbuotojo zona
-- `http://localhost:8080/finansininkas` - finansininko zona
+- `http://localhost:8080/buhalteris` - buhalterio zona
 - `http://localhost:8080/klientas` - kliento zona
 
 ## Funkcionalumas pagal rolę
@@ -110,9 +110,9 @@ Svarbi logika:
 - užsakymas po gamybos pažymimas kaip `PARUOSTAS`;
 - darbuotojas gali palikti pastabą gamybos veiksmui.
 
-### Finansininkas
-Finansininko puslapyje galima:
-- pasirinkti finansininką;
+### Buhalteris
+Buhalterio puslapyje galima:
+- pasirinkti buhalterį;
 - kurti išlaidas;
 - redaguoti išlaidas;
 - trinti išlaidas;
@@ -199,7 +199,7 @@ Bendra logika:
 Pirmo paleidimo metu, jei duomenų bazė tuščia, sistema sukuria demo duomenis:
 - 1 vadovą;
 - 1 darbuotoją;
-- 1 finansininką;
+- 1 buhalterį;
 - 2 klientus;
 - adresus;
 - sutartis;
@@ -259,7 +259,7 @@ Nustatymai yra faile:
 - užsakymų filtravimas pagal būseną;
 - darbuotojo kortelių veiksmai `Gaminti` ir `Atšaukti`;
 - kliento veiksmas `Atsiimti / apmokėti`;
-- finansininko išlaidų CRUD;
+- buhalterio išlaidų CRUD;
 - demo duomenų užpildymas;
 - MVC testai pagrindiniams puslapiams.
 

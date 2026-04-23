@@ -1,9 +1,8 @@
 package lt.viko.eif.kskrebe.candlebusiness.model;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 
 /**
  * Sistemos naudotojo modelis.
@@ -19,7 +18,7 @@ public class User extends Person {
     private String username;
 
     /** Naudotojo rolė verslo procese. */
-    @Enumerated(EnumType.STRING)
+    @Convert(converter = UserRoleConverter.class)
     @Column(nullable = false, length = 30)
     private UserRole role;
 

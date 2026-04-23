@@ -18,7 +18,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 /**
- * HTTP valdiklis finansininko islaidoms valdyti.
+ * HTTP valdiklis buhalterio islaidoms valdyti.
  */
 @RestController
 @RequestMapping("/api/expenses")
@@ -54,9 +54,9 @@ public class ExpenseController {
     }
 
     /**
-     * Grazina visas islaidas pagal finansininka.
+     * Grazina visas islaidas pagal buhalteri.
      *
-     * @param financierId finansininko identifikatorius
+     * @param financierId buhalterio identifikatorius
      * @return islaidu sarasas
      */
     @GetMapping(params = "financierId")

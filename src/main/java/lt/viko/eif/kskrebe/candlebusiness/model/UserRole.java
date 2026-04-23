@@ -9,7 +9,7 @@ public enum UserRole {
     /** Darbuotojas, vykdantis gamybos ar aptarnavimo užduotis. */
     DARBUOTOJAS,
     /** Finansų atsakingas asmuo. */
-    FINANSININKAS,
+    BUHALTERIS,
     /** Galutinis klientas, užsakantis gaminius. */
     KLIENTAS
 }

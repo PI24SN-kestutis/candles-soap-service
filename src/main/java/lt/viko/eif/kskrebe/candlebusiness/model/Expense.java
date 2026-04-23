@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 /**
- * Finansininko uzregistruota islaida.
+ * Buhalterio uzregistruota islaida.
  */
 @Entity
 public class Expense {
@@ -42,7 +42,7 @@ public class Expense {
     @Column(nullable = false)
     private LocalDate expenseDate;
 
-    /** Finansininkas, uzregistraves islaida. */
+    /** Buhalteris, uzregistraves islaida. */
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "created_by_financier_id", nullable = false)
     private User createdByFinancier;
@@ -58,7 +58,7 @@ public class Expense {
      * @param description aprasymas
      * @param amount suma
      * @param expenseDate data
-     * @param createdByFinancier finansininkas
+     * @param createdByFinancier buhalteris
      */
     public Expense(ExpenseCategory category, String description, BigDecimal amount, LocalDate expenseDate, User createdByFinancier) {
         this.category = category;
@@ -140,16 +140,16 @@ public class Expense {
     }
 
     /**
-     * @return finansininkas
+     * @return buhalteris
      */
     public User getCreatedByFinancier() {
         return createdByFinancier;
     }
 
     /**
-     * Nustato finansininka.
+     * Nustato buhalteri.
      *
-     * @param createdByFinancier finansininkas
+     * @param createdByFinancier buhalteris
      */
     public void setCreatedByFinancier(User createdByFinancier) {
         this.createdByFinancier = createdByFinancier;

@@ -18,7 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.time.LocalDate;
 
 /**
- * Finansininko puslapio MVC valdiklis.
+ * Buhalterio puslapio MVC valdiklis.
  */
 @Controller
 public class FinancierPageController {
@@ -31,19 +31,19 @@ public class FinancierPageController {
         this.expenseService = expenseService;
     }
 
-    @GetMapping("/finansininkas")
+    @GetMapping("/buhalteris")
     public String financierPage(@RequestParam(required = false) Long editExpenseId,
                                 Model model) {
         if (!model.containsAttribute("expenseForm")) {
             model.addAttribute("expenseForm", editExpenseId == null ? new FinancierExpenseForm() : toForm(expenseService.getExpenseById(editExpenseId)));
         }
-        model.addAttribute("financiers", userRepository.findByRole(UserRole.FINANSININKAS));
+        model.addAttribute("financiers", userRepository.findByRole(UserRole.BUHALTERIS));
         model.addAttribute("expenseCategories", ExpenseCategory.values());
         model.addAttribute("expenses", expenseService.getExpensesByDateRange(LocalDate.of(2000, 1, 1), LocalDate.now()));
         return "financier-page";
     }
 
-    @PostMapping("/finansininkas/islaidos")
+    @PostMapping("/buhalteris/islaidos")
     public String saveExpense(@ModelAttribute("expenseForm") FinancierExpenseForm expenseForm,
                               RedirectAttributes redirectAttributes) {
         try {
@@ -65,10 +65,10 @@ public class FinancierPageController {
             redirectAttributes.addFlashAttribute("errorMessage", exception.getMessage());
             redirectAttributes.addFlashAttribute("expenseForm", expenseForm);
         }
-        return "redirect:/finansininkas";
+        return "redirect:/buhalteris";
     }
 
-    @PostMapping("/finansininkas/islaidos/{expenseId}/trinti")
+    @PostMapping("/buhalteris/islaidos/{expenseId}/trinti")
     public String deleteExpense(@PathVariable Long expenseId,
                                 RedirectAttributes redirectAttributes) {
         try {
@@ -77,7 +77,7 @@ public class FinancierPageController {
         } catch (IllegalArgumentException exception) {
             redirectAttributes.addFlashAttribute("errorMessage", exception.getMessage());
         }
-        return "redirect:/finansininkas";
+        return "redirect:/buhalteris";
     }
 
     private FinancierExpenseForm toForm(Expense expense) {

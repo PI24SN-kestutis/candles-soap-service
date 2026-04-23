@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 /**
- * Finansininko islaidos forma Thymeleaf puslapiui.
+ * Buhalterio islaidos forma Thymeleaf puslapiui.
  */
 public class FinancierExpenseForm {
 
@@ -25,7 +25,7 @@ public class FinancierExpenseForm {
     /** Islaidos data. */
     private LocalDate expenseDate = LocalDate.now();
 
-    /** Finansininko identifikatorius. */
+    /** Buhalterio identifikatorius. */
     private Long financierId;
 
     public Long getExpenseId() {

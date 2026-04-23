@@ -71,11 +71,11 @@ class CandleBusinessApplicationTests {
     }
 
     /**
-     * Patikrina, ar finansininko puslapis pasiekiamas.
+     * Patikrina, ar buhalterio puslapis pasiekiamas.
      */
     @Test
     void financierPageLoads() throws Exception {
-        mockMvc.perform(get("/finansininkas"))
+        mockMvc.perform(get("/buhalteris"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("financier-page"));
     }

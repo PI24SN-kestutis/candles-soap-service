@@ -12,7 +12,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 /**
- * Verslo logika finansininko registruojamoms išlaidoms.
+ * Verslo logika buhalterio registruojamoms išlaidoms.
  */
 @Service
 public class ExpenseService {
@@ -90,14 +90,14 @@ public class ExpenseService {
 
     private User findFinancier(Long financierId) {
         if (financierId == null) {
-            throw new IllegalArgumentException("Finansininko identifikatorius yra privalomas");
+            throw new IllegalArgumentException("Buhalterio identifikatorius yra privalomas");
         }
 
         User financier = userRepository.findById(financierId)
-                .orElseThrow(() -> new IllegalArgumentException("Finansininkas nerastas: " + financierId));
+                .orElseThrow(() -> new IllegalArgumentException("Buhalteris nerastas: " + financierId));
 
-        if (financier.getRole() != UserRole.FINANSININKAS) {
-            throw new IllegalArgumentException("Išlaidą gali registruoti tik naudotojas su role FINANSININKAS");
+        if (financier.getRole() != UserRole.BUHALTERIS) {
+            throw new IllegalArgumentException("Išlaidą gali registruoti tik naudotojas su role BUHALTERIS");
         }
         return financier;
     }

@@ -22,17 +22,17 @@ public interface ExpenseRepository extends JpaRepository<Expense, Long> {
     List<Expense> findByCategory(ExpenseCategory category);
 
     /**
-     * Suranda islaidas pagal finansininka.
+     * Suranda islaidas pagal buhalteri.
      *
-     * @param createdByFinancierId finansininko identifikatorius
+     * @param createdByFinancierId buhalterio identifikatorius
      * @return islaidu sarasas
      */
     List<Expense> findByCreatedByFinancierId(Long createdByFinancierId);
 
     /**
-     * Suranda islaidas pagal finansininka ir iskart uzkrauna finansininko duomenis.
+     * Suranda islaidas pagal buhalteri ir iskart uzkrauna buhalterio duomenis.
      *
-     * @param createdByFinancierId finansininko identifikatorius
+     * @param createdByFinancierId buhalterio identifikatorius
      * @return islaidu sarasas
      */
     @Query("""
@@ -54,7 +54,7 @@ public interface ExpenseRepository extends JpaRepository<Expense, Long> {
     List<Expense> findByExpenseDateBetween(LocalDate start, LocalDate end);
 
     /**
-     * Suranda islaidas pagal datos intervala ir iskart uzkrauna finansininka.
+     * Suranda islaidas pagal datos intervala ir iskart uzkrauna buhalteri.
      *
      * @param start periodo pradzia
      * @param end periodo pabaiga

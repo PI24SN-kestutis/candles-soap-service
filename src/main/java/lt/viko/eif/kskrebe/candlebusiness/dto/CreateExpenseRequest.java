@@ -22,7 +22,7 @@ public class CreateExpenseRequest {
     /** Islaidos data. */
     private LocalDate expenseDate;
 
-    /** Finansininko identifikatorius. */
+    /** Buhalterio identifikatorius. */
     private Long financierId;
 
     public CreateExpenseRequest() {

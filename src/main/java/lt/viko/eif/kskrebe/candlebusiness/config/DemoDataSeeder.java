@@ -91,7 +91,7 @@ public class DemoDataSeeder {
 
             User vadovas = userRepository.save(new User("Asta", "Vadove", "asta@ambera.lt", "asta.vadove", UserRole.VADOVAS));
             User darbuotojas = userRepository.save(new User("Mantas", "Meistras", "mantas@ambera.lt", "mantas.darbuotojas", UserRole.DARBUOTOJAS));
-            User finansininke = userRepository.save(new User("Ruta", "Skaiciuotoja", "ruta@ambera.lt", "ruta.finansai", UserRole.FINANSININKAS));
+            User buhaltere = userRepository.save(new User("Ruta", "Skaiciuotoja", "ruta@ambera.lt", "ruta.finansai", UserRole.BUHALTERIS));
             User kliente = userRepository.save(new User("Egle", "Pirkeja", "egle@klientas.lt", "egle.kliente", UserRole.KLIENTAS));
             User klientas = userRepository.save(new User("Jonas", "Uzsakovas", "jonas@klientas.lt", "jonas.klientas", UserRole.KLIENTAS));
 
@@ -152,7 +152,7 @@ public class DemoDataSeeder {
                     "Soju vasko ir eteriniu alieju pirkimas",
                     new BigDecimal("68.40"),
                     LocalDate.now().minusDays(5),
-                    finansininke
+                    buhaltere
             ));
 
             expenseRepository.save(new Expense(
@@ -160,7 +160,7 @@ public class DemoDataSeeder {
                     "Dezutes, juosteles ir etiketes",
                     new BigDecimal("23.90"),
                     LocalDate.now().minusDays(2),
-                    finansininke
+                    buhaltere
             ));
         };
     }
